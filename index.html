@@ -1,20 +1,105 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Validation</title>
+    <title>VerifyMe | Age Validator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
 
-    <div class="age-box">
-        <h1>Age Validation</h1>
-        <p>Check if you are eligible to log in.</p>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-        <button id="loginBtn">Check Age</button>
-    </div>
+    <main class="container">
 
-    <script src="index.js"></script>
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">✓</div>
+                <span>Verify<span class="brand-highlight">Me</span></span>
+            </div>
+
+            <span class="secure-badge">
+                <span class="secure-dot"></span>
+                AGE VERIFICATION
+            </span>
+        </header>
+
+        <section class="hero">
+            <div class="shield-icon">♢</div>
+
+            <p class="eyebrow">SECURE ACCESS PORTAL</p>
+
+            <h1>Verify your <span>age.</span></h1>
+
+            <p class="description">
+                A simple verification process to determine your eligibility
+                and unlock access when you meet the age requirement.
+            </p>
+        </section>
+
+        <section class="verification-card">
+
+            <div class="card-heading">
+                <div>
+                    <h2>Age verification</h2>
+                    <p>Enter your age to continue.</p>
+                </div>
+
+                <div class="lock-icon">⌑</div>
+            </div>
+
+            <form id="ageForm" novalidate>
+                <label for="ageInput">YOUR AGE</label>
+
+                <div class="input-wrapper">
+                    <input
+                        type="number"
+                        id="ageInput"
+                        placeholder="e.g. 18"
+                        min="0"
+                        max="120"
+                        step="1"
+                        inputmode="numeric"
+                        required
+                    >
+                    <span class="input-suffix">YEARS</span>
+                </div>
+
+                <p class="input-hint">
+                    Enter your age in whole years.
+                </p>
+
+                <button type="submit" id="verifyBtn">
+                    Verify My Age
+                    <span>→</span>
+                </button>
+            </form>
+
+            <div id="result" class="result" role="status" aria-live="polite" hidden>
+                <div id="resultIcon" class="result-icon"></div>
+
+                <div class="result-content">
+                    <h3 id="resultTitle"></h3>
+                    <p id="resultMessage"></p>
+                </div>
+            </div>
+
+            <div class="privacy-note">
+                <span>◆</span>
+                <p>This demo checks the age you enter. It does not verify your identity.</p>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <span>VERIFYME</span>
+            <span>Simple. Secure. Straightforward.</span>
+        </footer>
+
+    </main>
+
 </body>
 </html>
